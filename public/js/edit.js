@@ -5,15 +5,15 @@ const postID = window.location.toString().split('/')[
   const editFormHandler = async function(event) {
     event.preventDefault();
   
-    const titleEl = document.querySelector('#postTitle').value;
-    const postEl = document.querySelector('#postText').value;
+    const title = document.querySelector('#postTitle').value;
+    const post = document.querySelector('#postText').value;
   
     await fetch(`/api/post/${postID}`, {
       method: 'PUT',
       body: JSON.stringify({
         id: postID,
-        title: titleEl,
-        contents: postEl
+        title: title,
+        contents: post
       }),
       headers: {
         'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
       ],
       order: [['commentDate', 'DESC']]
   })
-      .then(dbCommentData => res.json(dbCommentData))
+      .then(commentData => res.json(commentData))
       .catch(err => {
           console.log(err);
           res.status(500).json(err);
@@ -25,11 +25,11 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, (req, res) => {
   if (req.session.loggedIn) {
       Comment.create({
-          content: req.body.content,
+          commentText: req.body.commentText,
           postID: req.body.postID,
           userID: req.session.userID
       })
-          .then(dbCommentData => res.json(dbCommentData))
+          .then(commentData => res.json(commentData))
           .catch(err => {
               console.log(err);
               res.status(400).json(err);
@@ -44,12 +44,12 @@ router.delete('/:id', withAuth, (req, res) => {
           id: req.params.id
       }
   })
-      .then(dbCommentData => {
-          if (!dbCommentData) {
+      .then(commentData => {
+          if (!commentData) {
               res.status(404).json({ message: 'Comment ID not found' });
               return;
           }
-          res.json(dbCommentData);
+          res.json(commentData);
       })
       .catch(err => {
           console.log(err);
