@@ -12,8 +12,8 @@ async function commentFormHandler(event) {
         const response = await fetch('/api/comment', {
           method: 'POST',
           body: JSON.stringify({
+            comment,
             postID,
-            comment
           }),
           headers: {
             'Content-Type': 'application/json'
@@ -27,5 +27,6 @@ async function commentFormHandler(event) {
         }
       }
   }
-  
-  document.querySelector('#commentCard').addEventListener('click', commentFormHandler);
+  const commentBtn = document.querySelector('#commentBtn');
+  // document.querySelector('#commentCard').addEventListener('submit', commentFormHandler);
+ commentBtn.addEventListener('click', commentFormHandler) 
