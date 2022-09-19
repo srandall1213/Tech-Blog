@@ -1,9 +1,9 @@
 <div class="post card border-dark mb-3" style="max-width: 100%;">
     <div class="card-header">{{title}}</div>
     <div class="card-body">
-        <h5 class="card-title">By: {{username}} on {{postDate}}</h5>
+        <h5 class="card-title">By: {{user.username}} on {{format_date postDate}}</h5>
         <div class="card-body">
-            {{post.content}}
+            {{content}}
         </div>
     </div>
 </div>
@@ -14,7 +14,7 @@
     <div class="card-header">Leave a Comment</div>
     <div class="comment-form-body">
         <div>
-            <input class ="form-input w-50 h-50 m-3" type="text" id="commentInput"/>
+            <textarea class ="form-input w-50 h-50 m-3" type="text" id="commentInput"></textarea>
         </div>
         <div>
             <button type="submit" class="btn btn-info ml-3 mb-3" id="commentBtn">Submit</button>
