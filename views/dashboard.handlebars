@@ -2,11 +2,11 @@
     <div class="card-header">Your Posts</div>
     <div class="postText">
         <ul class="post-list">
-            {{#if posts}}
-                {{#each posts}}
+            {{#if posts.length}}
+                {{#each posts as |post|}}
                 <a href="/dashboard/edit/{{id}}">
                     <li class="post-list-item" >
-                        <div>{{posts.title}} created on {{format_date posts.postDate}}</div>
+                        <div>{{title}} created on {{format_date postDate}}</div>
                     </li>
                 </a>
                 {{/each}}
