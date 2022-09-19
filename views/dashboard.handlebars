@@ -2,11 +2,11 @@
     <div class="card-header">Your Posts</div>
     <div class="postText">
         <ul class="post-list">
-            {{#if posts.length}}
-                {{#each posts as |post|}}
+            {{#if posts}}
+                {{#each posts}}
                 <a href="/dashboard/edit/{{id}}">
                     <li class="post-list-item" >
-                        <div>{{title}} created on {{format_date postDate}}</div>
+                        <div>{{posts.title}} created on {{format_date posts.postDate}}</div>
                     </li>
                 </a>
                 {{/each}}
@@ -27,7 +27,7 @@
                 <input class="form-input w-100 mb-2" id="postTitle" type="text" name="title"/>
             </div>
             <div>
-                <label for="postText" class="form-label">Blog Entry:</label>
+                <label for="postText" class="form-label">Content:</label>
                 <textarea class="form-input w-100 mb-3" id="postText" type="text" name="content"></textarea>
             </div>
             <button type="submit" class="btn btn-info">Submit</button>

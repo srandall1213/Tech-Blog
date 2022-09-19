@@ -30,6 +30,7 @@ router.post('/', withAuth, (req, res) => {
           userID: req.session.userID
       })
           .then(commentData => res.json(commentData))
+          
           .catch(err => {
               console.log(err);
               res.status(400).json(err);

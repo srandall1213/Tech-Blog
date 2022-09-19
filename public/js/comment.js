@@ -1,7 +1,8 @@
 async function commentFormHandler(event) {
     event.preventDefault();
-  
-    const comment = document.querySelector('#commentText').value.trim();
+    
+    const comment = document.querySelector('#commentInput').value.trim();
+    console.log(comment);
   
     const postID = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
@@ -12,7 +13,7 @@ async function commentFormHandler(event) {
           method: 'POST',
           body: JSON.stringify({
             postID,
-            content
+            comment
           }),
           headers: {
             'Content-Type': 'application/json'
@@ -27,5 +28,4 @@ async function commentFormHandler(event) {
       }
   }
   
-  commentForm = document.querySelector("#commentForm")
-  if (commentForm){commentForm.addEventListener("submit", commentFormHandler);}
+  document.querySelector('#commentCard').addEventListener('click', commentFormHandler);

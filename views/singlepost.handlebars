@@ -1,38 +1,36 @@
-<div class="post card border-dark mb-3" style="max-width: 100%;">
+<div class="card border-dark mb-3" style="max-width: 100%;">
     <div class="card-header">{{posts.title}}</div>
     <div class="card-body">
-        <h5 class="card-title">By: {{posts.user.username}} on {{format_date posts.postDate}}</h5>
-        <div class="card-body">
+        <h5 class="card-title font-italic">Created on {{format_date posts.postDate}} by {{posts.user.username}}</h5>
+        <div class="card-body m-2">
             {{posts.content}}
         </div>
     </div>
 </div>
 
 {{#if loggedIn}}
-
-<form class="comment-form card border-dark mb-3" id="commentCard">
+<section class="card border-dark mb-3" id="commentCard">
     <div class="card-header">Leave a Comment</div>
     <div class="comment-form-body">
         <div>
-            <textarea class ="form-input w-50 h-50 m-3" type="text" id="commentInput"></textarea>
+            <textarea class ="form-input m-3 w-75" type="text" id="commentInput"></textarea>
         </div>
         <div>
             <button type="submit" class="btn btn-info ml-3 mb-3" id="commentBtn">Submit</button>
         </div>
     </div>
-</form> 
+</section>
 
 <script src="/js/comment.js"></script>
-
 {{/if}}
 
 <section class="card border-dark mb-3">
     <div class="card-header">Comments</div>
-    {{#if this}}
-    {{#each this}}
-        <div class="ml-3">
-            <p class="font-italic">{{user.username}} on {{format_date comment.commentDate}}</p>
-            <p>{{comment.commentText}}</p>
+    {{#if posts.comments}}
+    {{#each posts.comments}}
+        <div class="ml-3 mt-3">
+            <p class="font-italic mb-1">{{user.username}} on {{format_date commentDate}}:</p>
+            <p>{{commentText}}</p>
         </div>
     {{/each}}
     {{else}}
@@ -43,6 +41,3 @@
     </div>
 </section> 
 
-{{#if loggedIn}}
-<script src="/js/comment.js"></script>
-{{/if}}
