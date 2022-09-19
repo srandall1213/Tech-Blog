@@ -6,3 +6,7 @@
 .card-title {
     font-size: medium;
 }
+
+#logout:hover {
+    cursor: pointer;
+}
