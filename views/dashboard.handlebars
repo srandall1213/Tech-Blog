@@ -16,21 +16,25 @@
 </section>
 {{/if}}
 
-<section class="card border-dark" id="createPost">
+<section class="card border-dark hide" id="createPost">
     <div class="card-header">Create New Post</div>
     <div class="card-body">
         <form class="newPostForm">
             <div>
-                <label for="post-title" class="form-label">Title:</label>
+                <label for="postTitle" class="form-label">Title:</label>
                 <input class="form-input w-100 mb-2" id="postTitle" type="text" name="title"/>
             </div>
             <div>
-                <label for="post-content" class="form-label">Blog Entry:</label>
+                <label for="postText" class="form-label">Blog Entry:</label>
                 <input class="form-input w-100 mb-3" id="postText" type="text" name="content"/>
             </div>
-            <button type="button" class="btn btn-info" id="addPostBtn">Submit</button>
+            <button type="submit" class="btn btn-info">Submit</button>
         </form>
     </div>
 </section>
+
+<div class="center mt-3">
+    <button type="button" class="btn btn-info mx-auto" style="width: 200px;" id="addPostBtn">+ Create New Post</button> 
+</div>
 
 <script src="./js/new.js"></script> 

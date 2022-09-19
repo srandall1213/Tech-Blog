@@ -1,4 +1,4 @@
-<div class="card border-dark mb-3" style="max-width: 100%;">
+<div class="post card border-dark mb-3" style="max-width: 100%;">
     <div class="card-header">{{title}}</div>
     <div class="card-body">
         <h5 class="card-title">By: {{username}} on {{postDate}}</h5>
@@ -8,7 +8,7 @@
     </div>
 </div>
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 
 <form class="comment-form card border-dark mb-3" id="commentCard">
     <div class="card-header">Leave a Comment</div>
@@ -24,7 +24,7 @@
 
 <script src="/js/comment.js"></script>
 
-{{!-- {{/if}} --}}
+{{/if}}
 
 <section class="card border-dark mb-3">
     <div class="card-header">Comments</div>
@@ -43,6 +43,6 @@
     </div>
 </section> 
 
-{{!-- {{#if loggedIn}} --}}
+{{#if loggedIn}}
 <script src="/js/comment.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}

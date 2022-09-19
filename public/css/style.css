@@ -10,3 +10,12 @@
 #logout:hover {
     cursor: pointer;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}

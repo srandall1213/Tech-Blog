@@ -80,7 +80,7 @@ router.get('/post/:id', async (req, res) => {
 //LOGIN PAGE
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/dashboard');
+        res.redirect('/');
         return;
     }
     res.render('login');
@@ -88,10 +88,10 @@ router.get('/login', (req, res) => {
 
 //DASHBOARD PAGE
 router.get('/dashboard', (req, res) => {
-    // if (!req.session.loggedIn) {
-    //     res.redirect('/login');
-    //     return;
-    // }
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+        return;
+    }
     res.render('dashboard');
 });
 

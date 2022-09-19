@@ -9,14 +9,14 @@ function toggleHide(event) {
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const titleEl = document.querySelector('#postTitle').value;
-    const postEl = document.querySelector('#postText').value;
+    const postTitle = document.querySelector('#postTitle').value;
+    const postText = document.querySelector('#postText').value;
   
     const response = await fetch('/api/post', {
       method: 'POST',
       body: JSON.stringify({
-        title:titleEl,
-        contents:postEl
+        title: postTitle,
+        content: postText
       }),
       headers: {
         'Content-Type': 'application/json'
