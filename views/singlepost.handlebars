@@ -1,9 +1,9 @@
 <div class="post card border-dark mb-3" style="max-width: 100%;">
-    <div class="card-header">{{title}}</div>
+    <div class="card-header">{{posts.title}}</div>
     <div class="card-body">
-        <h5 class="card-title">By: {{user.username}} on {{format_date postDate}}</h5>
+        <h5 class="card-title">By: {{posts.user.username}} on {{format_date posts.postDate}}</h5>
         <div class="card-body">
-            {{content}}
+            {{posts.content}}
         </div>
     </div>
 </div>
