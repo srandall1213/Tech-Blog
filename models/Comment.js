@@ -11,16 +11,16 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    content: {
+    commentText: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    date_created: {
+    commentDate: {
       type: DataTypes.DATE,
       allowNull:false,
       defaultValue: DataTypes.NOW,
     },
-    user_id: {
+    userID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
@@ -28,7 +28,7 @@ Comment.init(
           key: 'id'
       }
     },
-    post_id: {
+    postID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {

@@ -16,9 +16,18 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
     password: {
       type: DataTypes.STRING,
@@ -34,6 +43,10 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+      async beforeUpdate(updateUserData) {
+        updateUserData.password = await bcrypt.hash(updateUserData.password, 10);
+        return updateUser;
+    }
     },
     sequelize,
     timestamps: false,
