@@ -13,7 +13,7 @@ const postID = window.location.toString().split('/')[
       body: JSON.stringify({
         id: postID,
         title: title,
-        contents: post
+        content: post
       }),
       headers: {
         'Content-Type': 'application/json'
