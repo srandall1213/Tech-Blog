@@ -8,3 +8,4 @@ My motivation in completing this project was to apply what I learned this week a
 ![Tech-Blog](./public/images/screenshot.png)
 
 ## Link to Deployed App 
+https://techblog1213.herokuapp.com/
