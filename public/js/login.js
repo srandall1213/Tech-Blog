@@ -1,28 +1,28 @@
-const loginFormHandler = async function(event) {
-    event.preventDefault();
+const loginEvent = async function(event) {
+  event.preventDefault();
   
-    const username = document.querySelector('#usernameInput');
-    const password = document.querySelector('#passwordInput');
+  const username = document.querySelector('#usernameInput');
+  const password = document.querySelector('#passwordInput');
   
-    if (username && password) {
-      const response = await fetch('/api/user/login', {
-        method: 'POST',
-        body: JSON.stringify({
-          username: username.value,
-          password: password.value,
-        }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to log in.');
-      }
+  if (username && password) {
+    const response = await fetch('/api/user/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: username.value,
+        password: password.value,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to log in.');
     }
+  }
 };
 
-const signupFormHandler = async (event) => {
+const signupEvent = async (event) => {
   event.preventDefault();
 
   const email = document.querySelector('#newEmail').value.trim();
@@ -44,10 +44,5 @@ const signupFormHandler = async (event) => {
   }
 };
   
-document
-  .querySelector('.loginForm')
-  .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signupForm')
-  .addEventListener('submit', signupFormHandler);
+document.querySelector('.loginForm').addEventListener('submit', loginEvent);
+document.querySelector('.signupForm').addEventListener('submit', signupEvent);

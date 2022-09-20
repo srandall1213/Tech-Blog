@@ -27,11 +27,11 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(postData => res.json(postData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(postData => res.json(postData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //SINGLE POST
@@ -61,17 +61,17 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(postData => {
-      if (!postData) {
-        res.status(404).json({ message: 'Post ID not found' });
-        return;
-      }
-      res.json(postData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(postData => {
+    if (!postData) {
+      res.status(404).json({ message: 'Post ID not found' });
+      return;
+    }
+    res.json(postData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //NEW POST
@@ -81,11 +81,11 @@ router.post('/', withAuth, (req, res) => {
     content: req.body.content,
     userID: req.session.userID
   })
-    .then(postData => res.json(postData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(postData => res.json(postData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //UPDATE POST
@@ -101,37 +101,37 @@ router.put('/:id', withAuth, (req, res) => {
       }
     }
   )
-    .then(postData => {
-      if (!postData) {
-        res.status(404).json({ message: 'Post ID not found' });
-        return;
-      }
-      res.json(postData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(postData => {
+    if (!postData) {
+      res.status(404).json({ message: 'Post ID not found' });
+      return;
+    }
+    res.json(postData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
-//DELETE 
+//DELETE POST
 router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
     }
   })
-    .then(postData => {
-      if (!postData) {
-        res.status(404).json({ message: 'Post ID not found' });
-        return;
-      }
-      res.json(postData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(postData => {
+    if (!postData) {
+      res.status(404).json({ message: 'Post ID not found' });
+      return;
+    }
+    res.json(postData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;

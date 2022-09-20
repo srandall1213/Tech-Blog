@@ -1,25 +1,19 @@
-<a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
-
 <div class="container mb-4">
-  <h2 class="my-3">Edit</h2>
-  <form id ="editPostForm">
+  <h2 class="my-3">Edit Post</h2>
+  <form id ="editPost">
     <div>
-      <label for="post-title">Title:</label><br>
+      <label>Title:</label><br>
       <input class="input" id="postTitle" type="text" value="{{post.title}}" />
     </div>
     <div>
-      <label for="post-content">Entry:</label><br>
+      <label>Entry:</label><br>
       <textarea class="input w-50" id="postText" type="text">{{post.content}}</textarea>
     </div>
-    <div class='title' id="postID" type="text" value={{post.id}}>
+    <div id="postID" type="text" value={{post.id}}>
       <label for="postid">Post ID: {{post.id}}</label>
     </div>
-    <div class="is-pulled-right mb-2">
-      Created by you on {{format_date post.postDate}} |
-      <a href="/post/{{post.id}}">Comments</a>
-    </div>
-    <button type="submit" class="btn btn-info">Save post</button>
-    <button type="button" class="btn btn-info" id="deletePostBtn">Delete post</button>
+    <button type="submit" class="btn btn-info">Save</button>
+    <button type="button" class="btn btn-info" id="deleteBtn">Delete</button>
   </form>
 </div>
 

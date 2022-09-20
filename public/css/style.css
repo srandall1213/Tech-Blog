@@ -19,3 +19,11 @@
 .hide {
     display: none;
 }
+
+.noStyle {
+    color: black;
+}
+
+.noStyle:hover {
+    color: black;
+}

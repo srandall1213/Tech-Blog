@@ -1,12 +1,12 @@
 const addPostBtn = document.querySelector('#addPostBtn');
 const createPost = document.querySelector('#createPost');
 
-function toggleHide(event) {
+function switcheroo(event) {
     createPost.classList.remove('hide');
     addPostBtn.classList.add('hide');
 };
 
-async function newFormHandler(event) {
+async function newPost(event) {
     event.preventDefault();
   
     const postTitle = document.querySelector('#postTitle').value;
@@ -32,5 +32,5 @@ async function newFormHandler(event) {
     }
   }
   
-  document.querySelector('.newPostForm').addEventListener('submit', newFormHandler);
-  addPostBtn.addEventListener('click', toggleHide) 
+  document.querySelector('.newPostForm').addEventListener('submit', newPost);
+  addPostBtn.addEventListener('click', switcheroo) 

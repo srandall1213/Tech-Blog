@@ -1,12 +1,12 @@
 <section class="card border-dark mb-3">
     <div class="card-header">Your Posts</div>
-    <div class="postText">
-        <ul class="post-list">
+    <div>
+        <ul>
             {{#if post.length}}
                 {{#each post as |post|}}
-                <a href="/dashboard/edit/{{id}}">
-                    <li class="post-list-item" >
-                        <div>{{title}} created on {{format_date postDate}}</div>
+                <a href="/dashboard/edit/{{id}}" class="noStyle">
+                    <li class="mt-2">
+                        <div>{{format_date postDate}} {{title}}</div>
                     </li>
                 </a>
                 {{/each}}

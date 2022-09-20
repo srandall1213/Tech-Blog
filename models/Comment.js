@@ -24,16 +24,16 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-          model: 'user',
-          key: 'id'
+        model: 'user',
+        key: 'id'
       }
     },
     postID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-          model: 'post',
-          key: 'id'
+        model: 'post',
+        key: 'id'
       }
     },
   },
